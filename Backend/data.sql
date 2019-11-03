@@ -171,46 +171,46 @@ VALUES (
 
 --------------------------- seed patients ---------------------------
 
-INSERT INTO patients (id, first_name, last_name, age, incident)
-VALUES (
-  '001',
-  'John',
-  'Doe',
-  '20',
-  '1'
-);
+-- INSERT INTO patients (id, first_name, last_name, age, incident)
+-- VALUES (
+--   '001',
+--   'John',
+--   'Doe',
+--   '20',
+--   '1'
+-- );
 
-INSERT INTO patients (id, first_name, last_name, age, incident)
-VALUES (
-  '002',
-  'Jane',
-  'Doe',
-  '135',
-  '1'
-);
+-- INSERT INTO patients (id, first_name, last_name, age, incident)
+-- VALUES (
+--   '002',
+--   'Jane',
+--   'Doe',
+--   '135',
+--   '1'
+-- );
 
-INSERT INTO observations (pulse, user_id, patient_id,priority)
-VALUES (
-  '100/150',
-  '1',
-  '001',
-  'DEAD'
-);
+-- INSERT INTO observations (pulse, user_id, patient_id,priority)
+-- VALUES (
+--   '100/150',
+--   '1',
+--   '001',
+--   'DEAD'
+-- );
 
-INSERT INTO observations (pulse, user_id, patient_id,priority, observation)
-VALUES (
-  '120/150',
-  '1',
-  '002',
-  'SEVERE',
-  'Arm ripped off.'
-);
+-- INSERT INTO observations (pulse, user_id, patient_id,priority, observation)
+-- VALUES (
+--   '120/150',
+--   '1',
+--   '002',
+--   'SEVERE',
+--   'Arm ripped off.'
+-- );
 
-INSERT INTO observations (pulse, user_id, patient_id,priority, observation)
-VALUES (
-  '140/150',
-  '1',
-  '001',
-  'SEVERE',
-  'Bleeding profusely, 12 stab wounds.'
-);
+-- INSERT INTO observations (pulse, user_id, patient_id,priority, observation)
+-- VALUES (
+--   '140/150',
+--   '1',
+--   '001',
+--   'SEVERE',
+--   'Bleeding profusely, 12 stab wounds.'
+-- );
