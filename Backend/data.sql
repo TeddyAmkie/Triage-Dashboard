@@ -1,8 +1,21 @@
+CREATE TABLE incidents (
+  id serial PRIMARY KEY,
+  location TEXT,
+  time_start timestamp DEFAULT CURRENT_TIMESTAMP,
+  time_closed timestamp
+);
+
+CREATE TABLE incident (
+  id INTEGER NOT NULL REFERENCES incidents,
+  situation TEXT
+);
+
 CREATE TABLE patients (
   id TEXT PRIMARY KEY NOT NULL,
   first_name TEXT,
   last_name TEXT,
-  age INT
+  age INT,
+  incident INT NOT NULL REFERENCES incidents
 );
 
 CREATE TABLE users (
@@ -19,7 +32,7 @@ CREATE TABLE users (
 CREATE TABLE observations (
   id serial PRIMARY KEY,
   RR INT,
-  pulse INT,
+  pulse TEXT,
   capillary_refill INT,
   BP TEXT,
   observation TEXT,
@@ -30,9 +43,11 @@ CREATE TABLE observations (
   timestamp timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE incidents (
-  id serial PRIMARY KEY
-);
+--------------------------- seed incidents ---------------------------
+
+INSERT INTO incidents (location) 
+VALUES ('City Center');
+
 --------------------------- seed users ---------------------------
 
 -- EMT
@@ -156,18 +171,46 @@ VALUES (
 
 --------------------------- seed patients ---------------------------
 
-INSERT INTO patients (id, first_name, last_name, age)
+INSERT INTO patients (id, first_name, last_name, age, incident)
 VALUES (
   '001',
   'John',
   'Doe',
-  '20'
+  '20',
+  '1'
 );
 
-INSERT INTO patients (id, first_name, last_name, age)
+INSERT INTO patients (id, first_name, last_name, age, incident)
 VALUES (
   '002',
   'Jane',
   'Doe',
-  '135'
+  '135',
+  '1'
+);
+
+INSERT INTO observations (pulse, user_id, patient_id,priority)
+VALUES (
+  '100/150',
+  '1',
+  '001',
+  'DEAD'
+);
+
+INSERT INTO observations (pulse, user_id, patient_id,priority, observation)
+VALUES (
+  '120/150',
+  '1',
+  '002',
+  'SEVERE',
+  'Arm ripped off.'
+);
+
+INSERT INTO observations (pulse, user_id, patient_id,priority, observation)
+VALUES (
+  '140/150',
+  '1',
+  '001',
+  'SEVERE',
+  'Bleeding profusely, 12 stab wounds.'
 );
