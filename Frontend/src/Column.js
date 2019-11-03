@@ -17,7 +17,8 @@ padding:8px;
 `;
 
 class Column extends React.Component {
-  render() {
+  render()
+   {
     return (
       <Container>
         <Title>{this.props.column.title}</Title>
@@ -27,8 +28,8 @@ class Column extends React.Component {
               ref={provided.innerRef}
               {...provided.droppableProps}>
               {this.props.patients.map((patient, index) =>
-                <Patient key={patient.id} patient={patient} index={index} />)}
-              {provided.placerholder}
+                <Patient key={patient.patientId} patient={patient} index={index} />)}
+              {provided.placeholder}
             </PatientList>
           )}
 

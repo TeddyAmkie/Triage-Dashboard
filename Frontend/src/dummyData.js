@@ -1,13 +1,13 @@
 const dummyData = {
   patients: {
-    'patient-001': { patientId: '001', firstName: 'John', lastName: 'Doe', age: '20', observations:[{status: 'sever', bloodPressure: '20/80'}, {status: 'minor', bloodPressure: '100/70'}]},
-    'patient-002': { patientId: '002', firstName: 'Jane', lastName: 'Doe', age: '135', observations:[{status: 'expectant', bloodPressure: '0/0'}, {status: 'minor', bloodPressure: '100/70'}]},
+    '001': { patientId: '001', firstName: 'John', lastName: 'Doe', age: '20', observations:[{status: 'sever', bloodPressure: '20/80'}, {status: 'minor', bloodPressure: '100/70'}]},
+    '002': { patientId: '002', firstName: 'Jane', lastName: 'Doe', age: '135', observations:[{status: 'expectant', bloodPressure: '0/0'}, {status: 'minor', bloodPressure: '100/70'}]},
   },
   columns: {
     'column-1': {
       id: 'column-1',
       title: 'Severe',
-      patientIds: ['patient-001', 'patient-002'],
+      patientIds: ['002', '001'],
     },
     'column-2': {
       id: 'column-2',
